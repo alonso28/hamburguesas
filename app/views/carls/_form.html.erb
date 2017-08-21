@@ -1,0 +1,37 @@
+<%= form_with(model: carl, local: true) do |form| %>
+  <% if carl.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(carl.errors.count, "error") %> prohibited this carl from being saved:</h2>
+
+      <ul>
+      <% carl.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :precio %>
+    <%= form.number_field :precio, id: :carl_precio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cantidad %>
+    <%= form.number_field :cantidad, id: :carl_cantidad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :peso %>
+    <%= form.number_field :peso, id: :carl_peso %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tamaño %>
+    <%= form.text_field :tamaño, id: :carl_tamaño %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @carl.precio %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @carl.cantidad %>
+</p>
+
+<p>
+  <strong>Peso:</strong>
+  <%= @carl.peso %>
+</p>
+
+<p>
+  <strong>Tamaño:</strong>
+  <%= @carl.tamaño %>
+</p>
+
+<%= link_to 'Edit', edit_carl_path(@carl) %> |
+<%= link_to 'Back', carls_path %>

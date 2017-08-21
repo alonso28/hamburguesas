@@ -1,0 +1,2 @@
+class Carl < ApplicationRecord
+end

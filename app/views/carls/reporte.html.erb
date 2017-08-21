@@ -1,0 +1,170 @@
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="http://localhost:3000/carls">Home</a></li>
+  <li><a href="http://localhost:3000/carls/reporte">Reportes</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+</body>
+</html>
+
+<html>
+<head>
+<style>
+table, td, th {
+  border: 1px solid black;
+}
+ table{
+  border-collapse: collapse;
+  width: 30%;
+  border:2px solid black;
+  text-aling:center;
+ }
+
+ td{
+  height: 10px;
+  vertical-aling: bottom;
+  border: 2px solid black;
+ }
+</style>
+
+
+
+
+
+
+<h1>Reporte de precio de hamburguesas</h1>
+
+
+
+<table>
+  <thead>
+    <tr>
+
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Peso</th>
+      <th>Tamaño</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @precioguardado.each do |carl| %>
+      <tr>
+       <td><%= carl.precio %></td>
+        <td><%=carl.cantidad %></td>
+         <td><%=carl.peso %></td>
+         <td><%=carl.tamaño %></td>
+</tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<% preciomenor = @precioguardado.first %>
+<% preciomayor = @precioguardado.last %>
+
+<h2> El precio menor es : <%= preciomenor.precio %> </h2>
+<h2> El precio mayor  es : <%= preciomayor.precio %> </h2>
+
+
+<h1>Reporte de cantidad de hamburguesas</h1>
+
+
+
+<table>
+  <thead>
+    <tr>
+
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Peso</th>
+      <th>Tamaño</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cantidadguardado.each do |carl| %>
+      <tr>
+       <td><%= carl.precio %></td>
+        <td><%=carl.cantidad %></td>
+         <td><%=carl.peso %></td>
+         <td><%=carl.tamaño %></td>
+</tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<% cantidadmenor = @cantidadguardado.first %>
+<% cantidadmayor = @cantidadguardado.last %>
+
+<h2> la cantidad menor es : <%= cantidadmenor.cantidad %> </h2>
+<h2> la cantidad mayor  es : <%= cantidadmayor.cantidad %> </h2>
+
+<h1>Reporte de peso de hamburguesas</h1>
+
+
+
+<table>
+  <thead>
+    <tr>
+
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Peso</th>
+      <th>Tamaño</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pesoguardado.each do |carl| %>
+      <tr>
+       <td><%= carl.precio %></td>
+        <td><%=carl.cantidad %></td>
+         <td><%=carl.peso %></td>
+         <td><%=carl.tamaño %></td>
+</tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<% pesomenor = @pesoguardado.first %>
+<% pesomayor = @pesoguardado.last %>
+
+<h2> El peso menor es : <%= pesomenor.peso %> </h2>
+<h2> El peso mayor  es : <%= pesomayor.peso %> </h2>
